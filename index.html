@@ -34,6 +34,10 @@
       <!-- pagination widget -->
     </div>
 
+    <div id="infinite-hits">
+      <!-- infinte hits widget -->
+    </div>
+
   </body>
   <script type="text/javascript">
 
@@ -84,13 +88,24 @@
       })
     );
 
+    // search.addWidget(
+    //   instantsearch.widgets.pagination({
+    //     container: '#pagination',
+    //     maxPages: 20,
+    //     scrollTo: false
+    //   })
+    // );
+
     search.addWidget(
-      instantsearch.widgets.pagination({
-        container: '#pagination',
-        maxPages: 20,
-        scrollTo: false
+      instantsearch.widgets.infiniteHits({
+        container: '#infinite-hits',
+        templates: {
+          empty: 'No results',
+          item: '<em>Product: {{name}}</em> {{type}} - {{price}}'
+        },
+        showMoreLabel: 'Show me more'
       })
-    );
+    )
 
     search.start();
 
