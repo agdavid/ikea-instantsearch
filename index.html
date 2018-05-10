@@ -14,12 +14,24 @@
       <!-- searchbox widget -->
     </div>
 
+    <div id="current-refined-values">
+      <!-- current refined values widget -->
+    </div>
+
+    <div id="clear-all">
+      <!-- clear all widget -->
+    </div>
+
     <div id="refinement-list">
       <!-- refinement list widget -->
     </div>
 
     <div id="hits">
       <!-- hits widget -->
+    </div>
+
+    <div id="pagination">
+      <!-- pagination widget -->
     </div>
 
   </body>
@@ -39,6 +51,23 @@
     );
 
     search.addWidget(
+      instantsearch.widgets.currentRefinedValues({
+        container: '#current-refined-values',
+        clearAll: false
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.clearAll({
+        container: '#clear-all',
+        templates: {
+          link: 'Clear All'
+        },
+        autoHideContainer: false
+      })
+    )
+
+    search.addWidget(
       instantsearch.widgets.refinementList({
         container: '#refinement-list',
         attributeName: 'categories.lvl0'
@@ -52,6 +81,14 @@
             empty: 'No results',
             item: '<em>Product: {{name}}</em> {{type}} - {{price}}'
           }
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.pagination({
+        container: '#pagination',
+        maxPages: 20,
+        scrollTo: false
       })
     );
 
