@@ -50,7 +50,13 @@
     search.addWidget(
       instantsearch.widgets.searchBox({
         container: '#search-box',
-        placeholder: 'Search for products'
+        placeholder: 'Search for products',
+        poweredBy: true,
+        wrapInput: true,
+        cssClasses: {
+          root: 'my-custom-searchbox',
+          input: ['my-input', 'my-custom-input-class', 'my-form-element'],
+        }
       })
     );
 
@@ -88,24 +94,24 @@
       })
     );
 
-    // search.addWidget(
-    //   instantsearch.widgets.pagination({
-    //     container: '#pagination',
-    //     maxPages: 20,
-    //     scrollTo: false
-    //   })
-    // );
-
     search.addWidget(
-      instantsearch.widgets.infiniteHits({
-        container: '#infinite-hits',
-        templates: {
-          empty: 'No results',
-          item: '<em>Product: {{name}}</em> {{type}} - {{price}}'
-        },
-        showMoreLabel: 'Show me more'
+      instantsearch.widgets.pagination({
+        container: '#pagination',
+        maxPages: 20,
+        scrollTo: false
       })
-    )
+    );
+
+    // search.addWidget(
+    //   instantsearch.widgets.infiniteHits({
+    //     container: '#infinite-hits',
+    //     templates: {
+    //       empty: 'No results',
+    //       item: '<em>Product: {{name}}</em> {{type}} - {{price}}'
+    //     },
+    //     showMoreLabel: 'Show me more'
+    //   })
+    // )
 
     search.start();
 
