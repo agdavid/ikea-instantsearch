@@ -9,6 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4"></script>
   </head>
   <body>
+    <h1>IKEA Items</h1>
+    <div id="hits">
+      <!-- hits widget -->
+    </div>
 
   </body>
   <script type="text/javascript">
@@ -18,6 +22,12 @@
       apiKey: '3f46604e5ceef1479ae2ca58ae4f0a71',
       indexName: 'ikea'
     });
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+          container: '#hits'
+      })
+    );
 
     search.start();
 
