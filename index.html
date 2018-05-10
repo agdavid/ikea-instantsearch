@@ -26,6 +26,10 @@
       <!-- menu widget -->
     </div>
 
+    <div id="price-ranges">
+      <!-- price range widget -->
+    </div>
+
     <div id="hierarchical-menu">
       <!-- hierarchical menu widget -->
     </div>
@@ -92,6 +96,21 @@
           templates: {
             header: 'Categories'
           }
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.priceRanges({
+        container: '#price-ranges',
+        attributeName: 'rounded_price',
+        labels: {
+          currency: '$',
+          separator: 'to',
+          button: 'Find'
+        },
+        templates: {
+          header: 'Price'
+        }
       })
     );
 
