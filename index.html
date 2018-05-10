@@ -10,6 +10,9 @@
   </head>
   <body>
     <h1>IKEA Items</h1>
+    <div id="search-box">
+      <!-- searchbox widget -->
+    </div>
     <div id="hits">
       <!-- hits widget -->
     </div>
@@ -22,6 +25,13 @@
       apiKey: '3f46604e5ceef1479ae2ca58ae4f0a71',
       indexName: 'ikea'
     });
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#search-box',
+        placeholder: 'Search for products'
+      })
+    );
 
     search.addWidget(
       instantsearch.widgets.hits({
