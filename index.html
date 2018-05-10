@@ -22,6 +22,10 @@
       <!-- clear all widget -->
     </div>
 
+    <div id="hierarchical-menu">
+      <!-- hierarchical menu widget -->
+    </div>
+
     <div id="refinement-list">
       <!-- refinement list widget -->
     </div>
@@ -78,11 +82,21 @@
     )
 
     search.addWidget(
-      instantsearch.widgets.refinementList({
-        container: '#refinement-list',
-        attributeName: 'categories.lvl0'
+      instantsearch.widgets.hierarchicalMenu({
+        container: '#hierarchical-menu',
+        attributes: ['categories.lvl0', 'categories.lvl1'],
+        templates: {
+          header: 'Hierarchical categories'
+        }
       })
     );
+
+    // search.addWidget(
+    //   instantsearch.widgets.refinementList({
+    //     container: '#refinement-list',
+    //     attributeName: 'categories.lvl0'
+    //   })
+    // );
 
     search.addWidget(
       instantsearch.widgets.hits({
