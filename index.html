@@ -30,6 +30,10 @@
       <!-- price range widget -->
     </div>
 
+    <div id="star-rating">
+      <!-- star rating widget -->
+    </div>
+
     <div id="hierarchical-menu">
       <!-- hierarchical menu widget -->
     </div>
@@ -110,6 +114,17 @@
         },
         templates: {
           header: 'Price'
+        }
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.starRating({
+        container: '#star-rating',
+        attributeName: 'rating',
+        labels: {
+          header: 'Rating',
+          andUp: '& Up'
         }
       })
     );
