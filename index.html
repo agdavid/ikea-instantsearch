@@ -22,6 +22,10 @@
       <!-- clear all widget -->
     </div>
 
+    <div id="menu">
+      <!-- menu widget -->
+    </div>
+
     <div id="hierarchical-menu">
       <!-- hierarchical menu widget -->
     </div>
@@ -79,17 +83,27 @@
         },
         autoHideContainer: false
       })
-    )
+    );
 
     search.addWidget(
-      instantsearch.widgets.hierarchicalMenu({
-        container: '#hierarchical-menu',
-        attributes: ['categories.lvl0', 'categories.lvl1'],
-        templates: {
-          header: 'Hierarchical categories'
-        }
+      instantsearch.widgets.menu({
+          container: '#menu',
+          attributeName: 'categories.lvl0',
+          templates: {
+            header: 'Categories'
+          }
       })
     );
+
+    // search.addWidget(
+    //   instantsearch.widgets.hierarchicalMenu({
+    //     container: '#hierarchical-menu',
+    //     attributes: ['categories.lvl0', 'categories.lvl1'],
+    //     templates: {
+    //       header: 'Hierarchical categories'
+    //     }
+    //   })
+    // );
 
     // search.addWidget(
     //   instantsearch.widgets.refinementList({
