@@ -13,6 +13,11 @@
     <div id="search-box">
       <!-- searchbox widget -->
     </div>
+
+    <div id="refinement-list">
+      <!-- refinement list widget -->
+    </div>
+
     <div id="hits">
       <!-- hits widget -->
     </div>
@@ -30,6 +35,13 @@
       instantsearch.widgets.searchBox({
         container: '#search-box',
         placeholder: 'Search for products'
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.refinementList({
+        container: '#refinement-list',
+        attributeName: 'categories.lvl0'
       })
     );
 
