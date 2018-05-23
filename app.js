@@ -33,15 +33,17 @@ search.addWidget(
   })
 );
 
-// search.addWidget(
-//   instantsearch.widgets.menu({
-//       container: '#menu',
-//       attributeName: 'categories.lvl0',
-//       templates: {
-//         header: 'Categories'
-//       }
-//   })
-// );
+search.addWidget(
+  instantsearch.widgets.menu({
+      container: '#menu',
+      attributeName: 'materials',
+      collapsible: true,
+      sortBy: ['count'],
+      templates: {
+        header: 'Materials'
+      }
+  })
+);
 
 search.addWidget(
   instantsearch.widgets.priceRanges({
