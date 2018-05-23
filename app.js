@@ -83,16 +83,17 @@ search.addWidget(
   })
 );
 
-// search.addWidget(
-//   instantsearch.widgets.refinementList({
-//     container: '#refinement-list',
-//     attributeName: 'categories.lvl0',
-//     collapsible: true,
-//     templates: {
-//       header: 'Categories'
-//     }
-//   })
-// );
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list',
+    attributeName: 'colors',
+    sortBy: ['name:asc'],
+    collapsible: true,
+    templates: {
+      header: 'Colors'
+    }
+  })
+);
 
 search.addWidget(
   instantsearch.widgets.hits({
