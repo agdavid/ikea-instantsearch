@@ -17,6 +17,12 @@ search.addWidget(
 );
 
 search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats'
+  })
+);
+
+search.addWidget(
   instantsearch.widgets.currentRefinedValues({
     container: '#current-refined-values',
     clearAll: false
