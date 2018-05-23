@@ -33,20 +33,21 @@ search.addWidget(
   })
 );
 
-search.addWidget(
-  instantsearch.widgets.menu({
-      container: '#menu',
-      attributeName: 'categories.lvl0',
-      templates: {
-        header: 'Categories'
-      }
-  })
-);
+// search.addWidget(
+//   instantsearch.widgets.menu({
+//       container: '#menu',
+//       attributeName: 'categories.lvl0',
+//       templates: {
+//         header: 'Categories'
+//       }
+//   })
+// );
 
 search.addWidget(
   instantsearch.widgets.priceRanges({
     container: '#price-ranges',
     attributeName: 'rounded_price',
+    collapsible: true,
     labels: {
       currency: '$',
       separator: 'to',
@@ -79,12 +80,16 @@ search.addWidget(
 //   })
 // );
 
-// search.addWidget(
-//   instantsearch.widgets.refinementList({
-//     container: '#refinement-list',
-//     attributeName: 'categories.lvl0'
-//   })
-// );
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list',
+    attributeName: 'categories.lvl0',
+    collapsible: true,
+    templates: {
+      header: 'Categories'
+    }
+  })
+);
 
 search.addWidget(
   instantsearch.widgets.hits({

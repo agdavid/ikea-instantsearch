@@ -397,7 +397,7 @@ header img {
 #no-results-message li a.remove:hover img {
   opacity: 1;
 }
-a.clear-all {
+.clear-all {
   font-size: 12px;
   line-height: 1;
   display: inline-block;
@@ -408,7 +408,7 @@ a.clear-all {
   border: 2px solid #ddd;
   border-radius: 4px;
 }
-a.clear-all:hover {
+.clear-all:hover {
   transition: border-color .3s ease-in;
   border-color: #999;
 }
