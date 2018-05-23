@@ -113,6 +113,25 @@ search.addWidget(
   })
 );
 
+search.addWidget(
+  instantsearch.widgets.numericRefinementList({
+    container: '#numeric-refinement-list',
+    attributeName: 'share_count',
+    templates: {
+      header: 'Share Count'
+    },
+    options: [
+      {name: 'All'},
+      {end: 1000, name: 'less than 1000'},
+      {start: 1000, end: 5000, name: 'between 1000 and 5000'},
+      {start: 5000, end: 15000, name: 'between 5000 and 15000'},
+      {start: 15000, end: 30000, name: 'between 15000 and 30000'},
+      {start: 30000, name: 'more than 30000'}
+    ],
+    collapsible: true
+  })
+)
+
 // search.addWidget(
 //   instantsearch.widgets.infiniteHits({
 //     container: '#infinite-hits',
