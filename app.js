@@ -70,26 +70,27 @@ search.addWidget(
   })
 );
 
-// search.addWidget(
-//   instantsearch.widgets.hierarchicalMenu({
-//     container: '#hierarchical-menu',
-//     attributes: ['categories.lvl0', 'categories.lvl1'],
-//     templates: {
-//       header: 'Hierarchical categories'
-//     }
-//   })
-// );
-
 search.addWidget(
-  instantsearch.widgets.refinementList({
-    container: '#refinement-list',
-    attributeName: 'categories.lvl0',
+  instantsearch.widgets.hierarchicalMenu({
+    container: '#hierarchical-menu',
     collapsible: true,
+    attributes: ['categories.lvl0', 'categories.lvl1'],
     templates: {
-      header: 'Categories'
+      header: 'Hierarchical categories'
     }
   })
 );
+
+// search.addWidget(
+//   instantsearch.widgets.refinementList({
+//     container: '#refinement-list',
+//     attributeName: 'categories.lvl0',
+//     collapsible: true,
+//     templates: {
+//       header: 'Categories'
+//     }
+//   })
+// );
 
 search.addWidget(
   instantsearch.widgets.hits({
