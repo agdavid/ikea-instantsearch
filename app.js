@@ -1,19 +1,18 @@
 const search = instantsearch({
   appId: 'ZSL0RJTCOE',
   apiKey: '3f46604e5ceef1479ae2ca58ae4f0a71',
-  indexName: 'ikea'
+  indexName: 'ikea',
+  routing: true,
+  searchParameters: {
+    hitsPerPage: 10
+  }
 });
 
 search.addWidget(
   instantsearch.widgets.searchBox({
-    container: '#search-box',
+    container: '#search-input',
     placeholder: 'Search for products',
-    poweredBy: true,
-    wrapInput: true,
-    cssClasses: {
-      root: 'my-custom-searchbox',
-      input: ['my-input', 'my-custom-input-class', 'my-form-element'],
-    }
+    poweredBy: true
   })
 );
 
@@ -91,8 +90,8 @@ search.addWidget(
   instantsearch.widgets.hits({
       container: '#hits',
       templates: {
-        empty: 'No results',
-        item: '<em>Product: {{name}}</em> {{type}} - {{price}}'
+        empty: "We didn't find any results for the search <em>\"{{query}}\"</em>",
+        item: document.getElementById('hit-template').innerHTML
       }
   })
 );

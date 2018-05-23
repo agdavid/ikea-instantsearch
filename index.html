@@ -5,15 +5,37 @@
     <meta charset="utf-8">
     <title>IKEA Instantsearch.js</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4/dist/instantsearch.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4/dist/instantsearch-theme-algolia.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4"></script>
   </head>
   <body>
-    <h1>IKEA Items</h1>
-    <div id="search-box">
-      <!-- searchbox widget -->
-    </div>
+    <header>
+        <div>
+          <!-- searchbox widget -->
+          <input id="search-input">
+        </div>
+    </header>
+    <main>
+      <div id="left-column">
+      </div>
+      <div id="right-column">
+        <div id="hits"><!-- hits widget --></div>
+        <div id="pagination"><!-- pagination widget --></div>
+      </div>
+    </main>
+
+    <script type="text/html" id="hit-template">
+      <div class="hit">
+        <div class="hit-image">
+          <img src={{image}} alt={{name}}>
+        </div>
+        <div class="hit-content">
+          <h3 class="hit-price">${{price}}</h3>
+          <h2 class="hit-name">{{{_highlightResult.name.value}}}</h2>
+          <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+        </div>
+      </div>
+    </script>
 
     <div id="current-refined-values">
       <!-- current refined values widget -->
@@ -41,14 +63,6 @@
 
     <div id="refinement-list">
       <!-- refinement list widget -->
-    </div>
-
-    <div id="hits">
-      <!-- hits widget -->
-    </div>
-
-    <div id="pagination">
-      <!-- pagination widget -->
     </div>
 
     <div id="infinite-hits">
